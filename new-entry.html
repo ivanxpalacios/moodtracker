@@ -26,19 +26,61 @@
 
             <div class="collapse navbar-collapse" id="navigation">
                 <nav class="navbar-nav container py-5 text-center d-flex flex-md-row justify-content-md-between">
-                    <a href="#about" class="nav-link text-light text-decoration-none text-uppercase py-2 fw-bold fs-4">About</a>
-                    <a href="#howtouse" class="nav-link text-light text-decoration-none text-uppercase py-2 fw-bold fs-4">How to use</a>
+                    <a href="index.html#about" class="nav-link text-light text-decoration-none text-uppercase py-2 fw-bold fs-4">About</a>
+                    <a href="index.html#howtouse" class="nav-link text-light text-decoration-none text-uppercase py-2 fw-bold fs-4">How to use</a>
                     <a href="#" class="nav-link text-light text-decoration-none text-uppercase py-2 fw-bold fs-4">My Entries</a>
                     <a href="new-entry.html" class="nav-link text-light text-decoration-none text-uppercase py-2 fw-bold fs-4">New Entry</a>
-                    <a href="#" class="nav-link text-light text-decoration-none text-uppercase py-2 fw-bold fs-4"><svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" viewBox="0 0 384 512"><path d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"/></svg></a>
+                    <a href="#" id="darkMode" class="nav-link text-light text-decoration-none text-uppercase py-2 fw-bold fs-4"><svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" viewBox="0 0 384 512"><path d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"/></svg></a>
                 </nav>
             </div>
 
         </div>
    </header>
 
-   <main class="container-xl py-5 gradiente">
-        
+   <main class="gradiente py-5">
+        <div class="container-xl">
+            <h2 class="display-3 fw-bold">New Entry</h2>
+
+            <div class="row d-flex justify-content-center mt-5">
+                <div class="col-md-8">
+
+                    <form class="bg-white p-4">
+                        <div>
+                            <label for="date" class="form-label fs-3 fw-bold">Date:</label>
+                            <input class="form-control fs-3" type="date" id="date">
+                        </div>
+
+                        <div class="mt-5">
+                            <label class="form-label fs-3 fw-bold" for="humor">Humor:</label>
+                            <select class="form-control fs-3" name="humor" id="humor">
+                                <option value="" disabled selected>-- Select --</option>
+                                <option value="Increíble">Incredible</option>
+                                <option value="Bien">Good</option>
+                                <option value="Meh">Meh</option>
+                                <option value="Mal">Bad</option>
+                                <option value="Horrible">Very Bad</option>
+                            </select>
+                        </div>
+
+                        <div class="mt-5">
+                            <label for="thoughts" class="form-label fs-3 fw-bold">Thoughts:</label>
+                            <textarea class="form-control fs-3" rows="4" placeholder="Write your thoughts about your day here." id="thoughts"></textarea>
+                        </div>
+
+                        <div class="mt-5">
+                            <label for="gratitude" class="form-label fs-3 fw-bold">Gratitude:</label>
+                            <textarea class="form-control fs-3" rows="4" placeholder="Include things you felt gratitude for in your day." id="gratitude"></textarea>
+                        </div>
+
+                        <button class="btn btn-dark text-uppercase px-5 py-4 fw-bold fs-3 d-block mx-auto mt-5 w-50">Submit</button>
+
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
    </main>
 
    <footer class="bg-black py-4">
@@ -46,5 +88,7 @@
    </footer>
     
     <script src="build/js/bootstrap.bundle.min.js"></script>
+    <script src="build/js/darkMode.js"></script>
+    
 </body>
 </html>
