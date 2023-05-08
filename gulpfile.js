@@ -44,7 +44,8 @@ function imagenes() {
 }
 
 function dev() {
-    watch ( 'src/scss/**/*.scss',css)
+    watch ( 'src/scss/**/*.scss', css)
+    watch ( 'src/js/**/*.js', js)
     watch ( 'src/img/**/*', imagenes )
 }
 
