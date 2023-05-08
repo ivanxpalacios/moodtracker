@@ -1,0 +1,1 @@
+Project created with HTML, CSS, SASS, Bootstrap and JavaScript with CRUD functionality. Uses LocalStorage to store the entries.
