@@ -1,0 +1,30 @@
+{
+  "name": "moodtrackerbootstrap",
+  "version": "1.0.0",
+  "description": "Proyecto con Bootstrap CRUD y LocalStorage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ivan Palacios Martínez",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "bootstrap": "^5.2.3",
+    "cssnano": "^5.1.12",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^9.0.1",
+    "gulp-purgecss": "^5.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "postcss": "^8.4.5",
+    "sass": "^1.49.0"
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%"
+  ],
+  "dependencies": {
+    "gulp-rename": "^2.0.0"
+  }
+}
