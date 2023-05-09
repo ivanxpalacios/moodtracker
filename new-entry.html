@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Placeholder</title>
+    <title>Mood Tracker</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
@@ -40,7 +40,7 @@
    </header>
 
    <main class="gradiente py-5">
-        <div class="container-xl">
+        <div class="container-xl" id="container-form">
             <h2 class="display-3 fw-bold">New Entry</h2>
 
             <div class="row d-flex justify-content-center mt-5">
@@ -74,7 +74,7 @@
                             <textarea class="form-control fs-3" rows="4" placeholder="Include things you felt gratitude for in your day." id="gratitude"></textarea>
                         </div>
 
-                        <button class="btn btn-dark text-uppercase px-5 py-4 fw-bold fs-3 d-block mx-auto mt-5 w-50">Submit</button>
+                        <button type="submit" class="btn btn-dark text-uppercase px-5 py-4 fw-bold fs-3 d-block mx-auto mt-5 w-50" disabled>Submit</button>
 
 
                     </form>
@@ -83,6 +83,17 @@
             </div>
 
         </div>
+
+        <div id="spinner" class="spinner__contenedor hidden">
+            <div class="sk-chase">
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+            </div>
+        </div>
    </main>
 
    <footer class="bg-black py-4">
@@ -90,6 +101,7 @@
    </footer>
     
     <script src="build/js/bootstrap.bundle.min.js"></script>
+    <script src="build/js/formulario.js"></script>
     <script src="build/js/darkMode.js"></script>
     
 </body>
