@@ -38,50 +38,40 @@
         </div>
    </header>
 
-   <main class="gradiente py-5">
-        <div class="container-xl">
-            <h2 class="display-3 fw-bold">New Entry</h2>
-
-            <div class="row d-flex justify-content-center mt-5">
-                <div class="col-md-8">
-
-                    <form class="bg-white p-4 blue" id="form">
-                        <div>
-                            <label for="date" class="form-label fs-3 fw-bold">Date:</label>
-                            <input class="form-control fs-3" type="date" id="date">
-                        </div>
-
-                        <div class="mt-5">
-                            <label class="form-label fs-3 fw-bold" for="humor">Humor:</label>
-                            <select class="form-control fs-3" name="humor" id="humor">
-                                <option value="" disabled selected>-- Select --</option>
-                                <option value="Increíble">Incredible</option>
-                                <option value="Bien">Good</option>
-                                <option value="Meh">Meh</option>
-                                <option value="Mal">Bad</option>
-                                <option value="Horrible">Very Bad</option>
-                            </select>
-                        </div>
-
-                        <div class="mt-5">
-                            <label for="thoughts" class="form-label fs-3 fw-bold">Thoughts:</label>
-                            <textarea class="form-control fs-3" rows="4" placeholder="Write your thoughts about your day here." id="thoughts"></textarea>
-                        </div>
-
-                        <div class="mt-5">
-                            <label for="gratitude" class="form-label fs-3 fw-bold">Gratitude:</label>
-                            <textarea class="form-control fs-3" rows="4" placeholder="Include things you felt gratitude for in your day." id="gratitude"></textarea>
-                        </div>
-
-                        <button class="btn btn-dark text-uppercase px-5 py-4 fw-bold fs-3 d-block mx-auto mt-5 w-50">Submit</button>
-
-
-                    </form>
-
-                </div>
-            </div>
-
+    <main class="gradiente py-5">
+        <div class=".table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
+        
    </main>
 
    <footer class="bg-black py-4">
