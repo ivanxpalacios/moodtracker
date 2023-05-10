@@ -8,6 +8,16 @@ const inputPensamientos = document.querySelector('#thoughts');
 const inputAgradecimientos = document.querySelector('#gratitude');
 const btnSubmit = document.querySelector('#form button[type="submit"]');
 
+const spinner = document.querySelector('#spinner');
+
+// Objeto que se llena con la información del formulario
+let entrada = {
+    date: '',
+    mood: '',
+    thoughts: '',
+    gratitude: ''
+}
+
 // Establece como fecha máxima para el input de fecha la fecha actual
 let today = new Date();
 let todayToISO = new Date(today.getTime() - (today.getTimezoneOffset() * 60000)).toISOString().substring(0, 10);
@@ -19,16 +29,6 @@ minDate.setDate(minDate.getDate() - 3);
 let minToISO = new Date(minDate.getTime() - (minDate.getTimezoneOffset() * 60000)).toISOString().substring(0, 10);
 inputFecha.setAttribute('min', minToISO);
 
-
-// Objeto que se llena con la información del formulario
-let entrada = {
-    date: '',
-    mood: '',
-    thoughts: '',
-    gratitude: ''
-}
-
-const spinner = document.querySelector('#spinner');
 
 // Eventos
 eventListeners();
@@ -102,6 +102,11 @@ function enviarForm(e) {
 
     spinner.classList.add('spinner__contenedor');
     spinner.classList.remove('hidden');
+
+    const entradaString = JSON.stringify(entrada);
+
+    // Añade la entrada al local storage
+    localStorage.setItem('entrada', entradaString);
 
     // Quitamos el spinner 3.5s después y reiniciamos el formulario
     setTimeout(() => {
