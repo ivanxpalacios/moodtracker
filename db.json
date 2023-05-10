@@ -15,11 +15,46 @@
       "id": 2
     },
     {
+      "date": "2023-05-10",
+      "mood": "Incredible",
+      "thoughts": "Entry 3",
+      "gratitude": "dsadas",
+      "id": 3
+    },
+    {
       "date": "2023-05-09",
       "mood": "Incredible",
-      "thoughts": "Entrada 4 unu",
-      "gratitude": "xd",
-      "id": 3
+      "thoughts": "Entrada 4",
+      "gratitude": "dsa",
+      "id": 4
+    },
+    {
+      "date": "2023-05-10",
+      "mood": "Incredible",
+      "thoughts": "Entradas 5",
+      "gratitude": "dsadas",
+      "id": 5
+    },
+    {
+      "date": "2023-05-10",
+      "mood": "Meh",
+      "thoughts": "Entrada 6",
+      "gratitude": "dsa",
+      "id": 6
+    },
+    {
+      "date": "2023-05-10",
+      "mood": "Incredible",
+      "thoughts": "Entrada 8",
+      "gratitude": "jeje",
+      "id": 8
+    },
+    {
+      "date": "2023-05-10",
+      "mood": "Incredible",
+      "thoughts": "Entry 9",
+      "gratitude": "omg",
+      "id": 9
     }
   ]
 }

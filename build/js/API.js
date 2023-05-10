@@ -1,7 +1,7 @@
 const url = 'http://localhost:4000/entries';
 
-// Cuando se crea una entrada nueva
-export const nuevaEntrada = async entrada => {
+// Adds the ney entry to JSON.server db
+export const newEntry = async entrada => {
     
     try {
         await fetch(url, {
@@ -18,7 +18,7 @@ export const nuevaEntrada = async entrada => {
 }
 
 // Obtiene las entradas
-export const obtenerEntradas = async () => {
+export const getEntries = async () => {
     try {
         const resultado = await fetch(url);
         const entradas = await resultado.json();
@@ -30,7 +30,7 @@ export const obtenerEntradas = async () => {
 }
 
 // Elimina un cliente
-export const eliminarEntrada = async (id) => {
+export const deleteEntry = async (id) => {
     
     try {
         await fetch(`${url}/${id}`, {

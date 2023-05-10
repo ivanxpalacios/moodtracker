@@ -1,94 +1,93 @@
-import { nuevaEntrada } from './API.js';
+import { newEntry } from './API.js';
 
 // Variables
-const containerForm = document.querySelector('#container-form');
-const formulario = document.querySelector('#form');
-const inputFecha = document.querySelector('#date');
+const form = document.querySelector('#form');
+const dateInput = document.querySelector('#date');
 const selectHumor = document.querySelector('#mood');
-const inputPensamientos = document.querySelector('#thoughts');
-const inputAgradecimientos = document.querySelector('#gratitude');
+const inputThoughts = document.querySelector('#thoughts');
+const inputGratitude = document.querySelector('#gratitude');
 const btnSubmit = document.querySelector('#form button[type="submit"]');
 
 const spinner = document.querySelector('#spinner');
 
-// Objeto que se llena con la información del formulario
-let entrada = {
+// Fills with the information entered in the form
+let entry = {
     date: '',
     mood: '',
     thoughts: '',
     gratitude: ''
 }
 
-// Establece como fecha máxima para el input de fecha la fecha actual
+// Sets the maximum date for the dateInput to the current date
 let today = new Date();
 let todayToISO = new Date(today.getTime() - (today.getTimezoneOffset() * 60000)).toISOString().substring(0, 10);
-inputFecha.setAttribute('max', todayToISO);
+dateInput.setAttribute('max', todayToISO);
 
-// Establece como fecha mínima tres días antes de hoy
+// Sets the minimum date for the dateInput to three days before the current date
 let minDate = new Date();
 minDate.setDate(minDate.getDate() - 3);
 let minToISO = new Date(minDate.getTime() - (minDate.getTimezoneOffset() * 60000)).toISOString().substring(0, 10);
-inputFecha.setAttribute('min', minToISO);
+dateInput.setAttribute('min', minToISO);
 
 
-// Eventos
+// Events
 eventListeners();
 function eventListeners() {
-    inputFecha.addEventListener('blur', validarCampo);
-    selectHumor.addEventListener('blur', validarCampo);
-    inputPensamientos.addEventListener('blur', validarCampo);
-    inputAgradecimientos.addEventListener('blur', validarCampo);
+    dateInput.addEventListener('blur', validateInput);
+    selectHumor.addEventListener('blur', validateInput);
+    inputThoughts.addEventListener('blur', validateInput);
+    inputGratitude.addEventListener('blur', validateInput);
 
-    formulario.addEventListener('submit', enviarForm);
+    form.addEventListener('submit', submitForm);
 }
 
-// Funciones
+// Functions
 
-function validarCampo(e) {
+function validateInput(e) {
     if(e.target.value.trim() === '') {
-        mostrarAlerta('Todos los campos son obligatorios');
-        entrada[e.target.id] = '';
-        comprobarForm();
+        showAlert('All fields are required');
+        entry[e.target.id] = '';
+        checkFormFilled();
         return;
     }
 
-    limpiarAlerta();
+    removeAlert();
 
-    entrada[e.target.id] = e.target.value.trim();
+    entry[e.target.id] = e.target.value.trim();
 
-    // Comprobar que el objeto datosForm esté lleno y cambia el disabled del boton
-    comprobarForm();
+    // Checks that the entry object is full and sets disabled = false to the submit button
+    checkFormFilled();
 }
 
-function mostrarAlerta(mensaje) {
-    const alerta = document.createElement('P');
-    alerta.textContent = mensaje;
-    alerta.classList.add('alerta');
+function showAlert(message) {
+    const alert = document.createElement('P');
+    alert.textContent = message;
+    alert.classList.add('alerta');
 
-    const existe = formulario.querySelector('.alerta');
+    const exists = form.querySelector('.alerta');
 
-    if(existe) {
-        existe.remove();
+    if(exists) {
+        exists.remove();
     }
 
     setTimeout(() => {
-        alerta.remove();
+        alert.remove();
     }, 3000);
 
-    formulario.insertBefore(alerta, btnSubmit);
+    form.insertBefore(alert, btnSubmit);
 }
 
-function limpiarAlerta() {
-    // Comprueba si ya existe una alerta en ese input, y si ya existe la elimina antes de insertar la nueva
-    const alerta = formulario.querySelector('.alerta');
-    if(alerta) {
-        alerta.remove();
+function removeAlert() {
+    // Checks if an alert already exists, and if it already exists, removes it before inserting the new one
+    const alert = form.querySelector('.alerta');
+    if(alert) {
+        alert.remove();
     }
 }
 
-function comprobarForm() {
-    // Si uno de los valores del objeto datosForm incluye un espacio vacío, añadimos la clase de opacity y el disabled true
-    if( Object.values(entrada).includes('') ) {
+function checkFormFilled() {
+    // If one of the values of the entry object includes an empty space, we add the opacity class and the disabled true to the submit button
+    if( Object.values(entry).includes('') ) {
         btnSubmit.disabled = true;
         return;
     } 
@@ -97,33 +96,31 @@ function comprobarForm() {
 
 
 
-function enviarForm(e) {
+function submitForm(e) {
 
     e.preventDefault();
 
     spinner.classList.add('spinner__contenedor');
     spinner.classList.remove('hidden');
 
-    nuevaEntrada(entrada);
+    // Removes the spinner and resets the form
+    setTimeout(() => {
+        spinner.classList.remove('spinner__contenedor');
+        spinner.classList.add('hidden');
 
-    // Quitamos el spinner 3.5s después y reiniciamos el formulario
-    // setTimeout(() => {
-    //     spinner.classList.remove('spinner__contenedor');
-    //     spinner.classList.add('hidden');
+        checkFormFilled();
+        form.reset();
 
-    //     comprobarForm();
-    //     formulario.reset();
+        const alertSuccess = document.createElement('p');
+        alertSuccess.classList.add('exito');
+        alertSuccess.textContent = 'Your entry was uploaded succesfully';
 
-    //     const alertaExito = document.createElement('p');
-    //     alertaExito.classList.add('exito');
-    //     alertaExito.textContent = 'Tu entrada se ha enviado correctamente';
+        form.insertBefore(alertSuccess, btnSubmit);
 
-    //     formulario.insertBefore(alertaExito, btnSubmit);
+        setTimeout(() => {
+            newEntry(entry);
+            alertSuccess.remove();
+        }, 2500);
 
-    //     setTimeout(() => {
-    //         alertaExito.remove();
-
-    //     }, 3500);
-
-    // }, 3500);
+    }, 2500);
 }
