@@ -8,6 +8,19 @@ const inputPensamientos = document.querySelector('#thoughts');
 const inputAgradecimientos = document.querySelector('#gratitude');
 const btnSubmit = document.querySelector('#form button[type="submit"]');
 
+// Establece como fecha máxima para el input de fecha la fecha actual
+let today = new Date();
+let todayToISO = new Date(today.getTime() - (today.getTimezoneOffset() * 60000)).toISOString().substring(0, 10);
+inputFecha.setAttribute('max', todayToISO);
+
+// Establece como fecha mínima tres días antes de hoy
+let minDate = new Date();
+minDate.setDate(minDate.getDate() - 3);
+let minToISO = new Date(minDate.getTime() - (minDate.getTimezoneOffset() * 60000)).toISOString().substring(0, 10);
+inputFecha.setAttribute('min', minToISO);
+
+
+// Objeto que se llena con la información del formulario
 let entrada = {
     date: '',
     mood: '',
