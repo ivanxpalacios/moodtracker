@@ -1,13 +1,19 @@
-import { obtenerEntradas } from './API.js';
+import { obtenerEntradas, eliminarEntrada } from './API.js';
 
 (function() {
     // Variables
     const listadoEntradas = document.querySelector('#tbody');
 
+    let entradaDeleteId = '';
+
+    const btnDelete = document.querySelector('#btnDelete');
+
     // Eventos
     document.addEventListener('DOMContentLoaded', mostrarEntradas);
 
-    listadoEntradas.addEventListener('click', confirmarEliminar);
+    listadoEntradas.addEventListener('click', asignarId);
+
+    btnDelete.addEventListener('click', confirmarEliminar);
 
 
 
@@ -28,7 +34,7 @@ import { obtenerEntradas } from './API.js';
                 <td>
                     <div class="icono-contenedor">
                         <a class="icono" href="edit-entry.html?id=${id}"><img class="editar" src="build/img/edit.svg" /></a>
-                        <a class="icono" href="#" data-entrada="${id}"><img class="eliminar" src="build/img/trash-solid.svg"/> </a>
+                        <a class="icono" href="#"><img class="eliminar" data-entrada="${id}" data-bs-toggle="modal" data-bs-target="#exampleModal" src="build/img/trash-solid.svg"/> </a>
                     </div>
                 </td>
             `;
@@ -37,10 +43,14 @@ import { obtenerEntradas } from './API.js';
         });
     }
 
-    function confirmarEliminar(e) {
+    function asignarId(e) {
         if(e.target.classList.contains('eliminar')) {
-            console.log('Diste click en el botón de eliminar')
+            entradaDeleteId = parseInt(e.target.dataset.entrada);
         }
+    }
+
+    function confirmarEliminar() {
+        eliminarEntrada(entradaDeleteId);
     }
 
 })();

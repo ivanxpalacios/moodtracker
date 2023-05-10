@@ -6,6 +6,20 @@
       "thoughts": "Today was an amazing day.",
       "gratitude": "The weather was nice.",
       "id": 1
+    },
+    {
+      "date": "2023-05-09",
+      "mood": "Incredible",
+      "thoughts": "Entrada número 2",
+      "gratitude": "ola k ase",
+      "id": 2
+    },
+    {
+      "date": "2023-05-09",
+      "mood": "Incredible",
+      "thoughts": "Entrada 4 unu",
+      "gratitude": "xd",
+      "id": 3
     }
   ]
 }

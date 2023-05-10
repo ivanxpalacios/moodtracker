@@ -28,3 +28,15 @@ export const obtenerEntradas = async () => {
         console.log(error)
     }
 }
+
+// Elimina un cliente
+export const eliminarEntrada = async (id) => {
+    
+    try {
+        await fetch(`${url}/${id}`, {
+            method: 'DELETE'
+        });
+    } catch (error) {
+        console.log(error);
+    }
+}
