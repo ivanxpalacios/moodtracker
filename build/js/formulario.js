@@ -1,3 +1,4 @@
+import { nuevaEntrada } from './API.js';
 
 // Variables
 const containerForm = document.querySelector('#container-form');
@@ -53,7 +54,7 @@ function validarCampo(e) {
 
     limpiarAlerta();
 
-    entrada[e.target.id] = e.target.value.trim().toLowerCase();
+    entrada[e.target.id] = e.target.value.trim();
 
     // Comprobar que el objeto datosForm esté lleno y cambia el disabled del boton
     comprobarForm();
@@ -103,29 +104,26 @@ function enviarForm(e) {
     spinner.classList.add('spinner__contenedor');
     spinner.classList.remove('hidden');
 
-    const entradaString = JSON.stringify(entrada);
-
-    // Añade la entrada al local storage
-    localStorage.setItem('entrada', entradaString);
+    nuevaEntrada(entrada);
 
     // Quitamos el spinner 3.5s después y reiniciamos el formulario
-    setTimeout(() => {
-        spinner.classList.remove('spinner__contenedor');
-        spinner.classList.add('hidden');
+    // setTimeout(() => {
+    //     spinner.classList.remove('spinner__contenedor');
+    //     spinner.classList.add('hidden');
 
-        comprobarForm();
-        formulario.reset();
+    //     comprobarForm();
+    //     formulario.reset();
 
-        const alertaExito = document.createElement('p');
-        alertaExito.classList.add('exito');
-        alertaExito.textContent = 'Tu entrada se ha enviado correctamente';
+    //     const alertaExito = document.createElement('p');
+    //     alertaExito.classList.add('exito');
+    //     alertaExito.textContent = 'Tu entrada se ha enviado correctamente';
 
-        formulario.insertBefore(alertaExito, btnSubmit);
+    //     formulario.insertBefore(alertaExito, btnSubmit);
 
-        setTimeout(() => {
-            alertaExito.remove();
+    //     setTimeout(() => {
+    //         alertaExito.remove();
 
-        }, 3500);
+    //     }, 3500);
 
-    }, 3500);
+    // }, 3500);
 }

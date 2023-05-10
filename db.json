@@ -1,10 +1,11 @@
 {
-    "entries": [
-        {
-            "date": "2023-05-09",
-            "gratitude": "I feel happy because the sky was blue.",
-            "mood": "incredible",
-            "thoughts": "Today was a good day."
-        }
-    ]
+  "entries": [
+    {
+      "date": "2023-05-10",
+      "mood": "Incredible",
+      "thoughts": "Today was an amazing day.",
+      "gratitude": "The weather was nice.",
+      "id": 1
+    }
+  ]
 }
