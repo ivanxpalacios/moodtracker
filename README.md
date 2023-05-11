@@ -3,7 +3,7 @@
 ## Description
 Project created with HTML, CSS, SASS, Bootstrap and JavaScript with CRUD functionality. Uses JSON.server to store the entries in a JSON file.
 
-## ** Set  Up **
+## Set  Up 
 1. Start development server
 ```
 npm run start
