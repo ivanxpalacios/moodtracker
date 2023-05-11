@@ -9,6 +9,8 @@ Project created with HTML, CSS, SASS, Bootstrap and JavaScript with CRUD functio
 npm run start
 ```
 
+Then you can open index.html with Live Server.
+
 After that you are able to start creating, editing or deleting your entries.
 
 
