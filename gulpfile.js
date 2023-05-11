@@ -27,7 +27,7 @@ function cssbuild( ) {
             suffix: '.min'
         }))
         .pipe(purgecss({
-            content: ['index.html']
+            content: ['index.html', 'edit-entry.html', 'my-entries.html', 'new-entry.html', 'src/js/**/*']
         }))
         .pipe(dest('build/css'))
 
