@@ -38,29 +38,42 @@ function setTheme(){
             form.classList.add('form-dark-bg');
             form.classList.remove('bg-white');
         }
+
+        const seeMoreBtns = document.querySelectorAll('.see-more');
+
+        seeMoreBtns.forEach(link => {
+            link.classList.add('text-white');
+        });
+
         
     }
-    else{
-      document.body.setAttribute("theme", "light");
+    else {
+        document.body.setAttribute("theme", "light");
 
-      document.querySelector('.titulo').classList.remove('text-white');
+        document.querySelector('.titulo').classList.remove('text-white');
 
-      if(tabla) {
-        tabla.classList.remove('table-dark');
-      }
+        if(tabla) {
+            tabla.classList.remove('table-dark');
+        }
 
-      const links = document.querySelectorAll('.link-blanco');
+        const links = document.querySelectorAll('.link-blanco');
 
-      links.forEach(link => {
-          link.classList.remove('text-white');
-      });
+        links.forEach(link => {
+            link.classList.remove('text-white');
+        });
 
-      document.querySelector('#navbar').classList.remove('navbar-dark');
+        document.querySelector('#navbar').classList.remove('navbar-dark');
 
-      if(form) {
-        form.classList.remove('form-dark-bg');
-        form.classList.add('bg-white');
-    }
+        if(form) {
+            form.classList.remove('form-dark-bg');
+            form.classList.add('bg-white');
+        }
+
+        const seeMoreBtns = document.querySelectorAll('.see-more');
+
+        seeMoreBtns.forEach(link => {
+            link.classList.remove('text-white');
+        });
     }
   }
 

@@ -22,6 +22,17 @@ export const getEntries = async () => {
     try {
         const result = await fetch(url);
         const entries = await result.json();
+
+        entries.forEach(entry => {
+            const {date} = entry;
+
+            // Changes the format of the date
+            let splitDate = date.split("-");
+            let formattedDate = [splitDate[1], splitDate[2], splitDate[0]].join('/');
+
+            entry.date = formattedDate;
+            
+        });
         return entries;
 
     } catch (error) {
@@ -46,6 +57,12 @@ export const getEntryEdit = async id => {
     try {
         const result = await fetch(`${url}/${id}`);
         const entry = await result.json();
+
+        // Changes the format of the date
+        let splitDate = entry.date.split("/");
+        let formattedDate = [splitDate[2], splitDate[0], splitDate[1]].join('-').substring(1, 11);
+
+        entry.date = formattedDate;
 
         return entry;
         

@@ -132,16 +132,14 @@ import { getEntryEdit, editEntry } from './API.js';
     function submitForm(e) {
         e.preventDefault();
 
-        e.preventDefault();
-
         spinner.classList.add('spinner__contenedor');
         spinner.classList.remove('hidden');
 
-        // Changes the format of the date
-        let splitDate = entry.date.split("-");
-        let formattedDate = [splitDate[1], splitDate[2], splitDate[0]].join('/');
+        // // Changes the format of the date
+        // let splitDate = entry.date.split("-");
+        // let formattedDate = [splitDate[1], splitDate[2], splitDate[0]].join('/');
     
-        entry.date = formattedDate;
+        // entry.date = formattedDate;
 
         // Removes the spinner and resets the form
         setTimeout(() => {
