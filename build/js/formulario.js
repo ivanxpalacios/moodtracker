@@ -3,7 +3,7 @@ import { newEntry } from './API.js';
 // Variables
 const form = document.querySelector('#form');
 const dateInput = document.querySelector('#date');
-const selectHumor = document.querySelector('#mood');
+const selectMood = document.querySelector('#mood');
 const inputThoughts = document.querySelector('#thoughts');
 const inputGratitude = document.querySelector('#gratitude');
 const btnSubmit = document.querySelector('#form button[type="submit"]');
@@ -34,7 +34,7 @@ dateInput.setAttribute('min', minToISO);
 eventListeners();
 function eventListeners() {
     dateInput.addEventListener('blur', validateInput);
-    selectHumor.addEventListener('blur', validateInput);
+    selectMood.addEventListener('blur', validateInput);
     inputThoughts.addEventListener('blur', validateInput);
     inputGratitude.addEventListener('blur', validateInput);
 
