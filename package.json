@@ -4,7 +4,7 @@
   "description": "Proyecto con Bootstrap CRUD y LocalStorage",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "json-server db.json -p 4000"
   },
   "author": "Ivan Palacios Martínez",
   "license": "ISC",

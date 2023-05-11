@@ -25,7 +25,7 @@ export const getEntries = async () => {
         return entries;
 
     } catch (error) {
-        console.log(error)
+        console.log(error);
     }
 }
 

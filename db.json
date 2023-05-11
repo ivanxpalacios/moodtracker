@@ -3,44 +3,9 @@
     {
       "date": "2023-05-10",
       "mood": "Incredible",
-      "thoughts": "Today was an amazing day.",
-      "gratitude": "The weather was nice.",
+      "thoughts": "This is a sample entry. Feel free to edit or delete it and start creating your own.",
+      "gratitude": "I hope you like this project. Feedback is always appreciated!",
       "id": 1
-    },
-    {
-      "date": "2023-05-09",
-      "mood": "Incredible",
-      "thoughts": "Entrada número 2",
-      "gratitude": "ola k ase",
-      "id": 2
-    },
-    {
-      "date": "2023-05-10",
-      "mood": "Incredible",
-      "thoughts": "Entry 3",
-      "gratitude": "dsadas",
-      "id": 3
-    },
-    {
-      "date": "2023-05-09",
-      "mood": "Incredible",
-      "thoughts": "Entrada 4",
-      "gratitude": "dsa",
-      "id": 4
-    },
-    {
-      "date": "2023-05-10",
-      "mood": "Incredible",
-      "thoughts": "Entradas 5",
-      "gratitude": "dsadas",
-      "id": 5
-    },
-    {
-      "date": "2023-05-10",
-      "mood": "Meh",
-      "thoughts": "Entrada 6",
-      "gratitude": "dsa",
-      "id": 6
     }
   ]
 }
