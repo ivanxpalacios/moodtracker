@@ -32,11 +32,15 @@ import { getEntries, deleteEntry } from './API.js';
 
             const tr = document.createElement('tr');
 
+            // Makes sure line breaks are being printed in the td
+            const thoughtsWithBr = thoughts.replace(/(?:\r\n|\r|\n)/g, '<br />');
+            const gratitudeWithBr = gratitude.replace(/(?:\r\n|\r|\n)/g, '<br />');
+
             tr.innerHTML += `
                 <td>${date}</div></td>
                 <td>${mood}</div></td>
-                <td><div class="hide-content td-width">${thoughts}</div></td>
-                <td><div class="hide-content td-width">${gratitude}</div></td>
+                <td><div class="hide-content td-width">${thoughtsWithBr}</div></td>
+                <td><div class="hide-content td-width">${gratitudeWithBr}</div></td>
                 <td>
                     <div class="icono-contenedor">
                         <a class="icono" href="edit-entry.html?id=${id}"><img class="editar" src="build/img/edit.svg" /></a>
